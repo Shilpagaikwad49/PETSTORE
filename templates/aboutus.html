@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block 'main' %}
+
+<div class="row">
+    <div class='col-md-8'>
+        {% for msg in messages %} <!-- for showing pett added to cart -->
+        {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                   <div class="alert alert-success" role="alert">
+                      {{ msg }}
+                   </div>
+        {% endif %} <!--For showing pett added to cart-->
+        {% endfor %}
+
+
+{% for cart in mycart %}
+<div class="row">
+            <div class="col-md-6 mt-2">
+                <img src="{{ cart.pid.pimage.url }}" class="card-img-top" alt="..." style ="width: 100%; height: 180px">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Name :</strong>{{ cart.pid.name }}</h5>
+                    <strong>
+                        <p class="card-text">Breed: {{ cart.pid.breed }} &nbsp;<br> Type: {{ cart.pid.type }}</p>
+                    </strong>
+                    <strong> Age: {{ cart.pid.age }}months &nbsp; <br>Gender:{{ cart.pid.gender }} </strong><br />
+                    <strong> Price: {{ cart.pid.price }}</strong><br>
+                    <strong>Details:{{ cart.pid.description }} <br></strong><br>
+
+                    <a href="/removecart/{{cart.id}}" class="btn btn-primary">Remove</a>
+                    &nbsp;
+                    <a href="/" class="btn btn-primary">Add More</a>
+                </div>
+            </div>
+
+        </div>
+ {% endfor %}
+</div>
+
+<div class='col-md-4'>
+       <h4 class="bg-primary" data-bs-theme="dark">Billing Section</h4> 
+       <h5> Number of Pets: {{ count}}</h5>
+       <h5> Amount to be paid: {{total}}</h5>
+       <button class="btn btn-primary" href="/">Confirm Order</button>
+</div>
+
+</div>
+
+{% endblock 'main' %}

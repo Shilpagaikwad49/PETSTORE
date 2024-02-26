@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block 'main' %}
+
+<!-- row 2 column 2 started -->
+<div class="col-9 mt-2">
+<div class="col-md-5 mx-auto mt-5 shadow p-2 rounded">
+  {% if success %}
+  <div class="alert alert-success" role="alert">
+    {{success}}
+  </div>
+  {% endif %}
+
+  <form action="/login" method="post" style="padding: 40px; border:2px solid black;">
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+    {% endif %}
+
+    <center>
+      <h3>Login Form </h3>
+    </center>
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" name="username">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Login">&nbsp; &nbsp;
+    <h6>Not a user? <a href="/register">Sign up</a> here</h6>
+
+  </form>
+</div>
+</div> <!-- row 2 column 2 end -->
+
+
+{% endblock 'main' %}

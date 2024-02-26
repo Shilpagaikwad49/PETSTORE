@@ -1,0 +1,35 @@
+<!-- row 2 started -->
+<div class="row">
+    <!-- row 2 column 1 started -->
+    <div class="col-3 p-2 bg-body-tertiary">
+        <h5>Filter product by category</h5>
+        <a href="/">All</a><br>
+        <a href="/searchby/cat">Cat</a><br>
+        <a href="/searchby/dog">Dog</a><br>
+        
+        <hr>
+
+        <h5>Sort by Price</h5>
+        <a href="/sort/asc">Low to High</a><br>
+        <a href="/sort/desc">High to Low</a>
+        <hr>
+        <h5>Search products by price</h5>
+        <form class="row g-3" action="/pricerange">
+            <div class="col-auto">
+                <label> Form :</label>
+                <input type="text" class="form-control" name="min">
+            </div><br>
+
+            <div class="col-auto">
+                <label> To :</label>
+                <input type="text" class="form-control" name="max">
+            </div><br>
+
+            <div class="col-auto mx-auto">
+                <input type="Submit" class="btn btn-primary" value="Search">
+            </div>
+
+        </form>
+
+
+    </div> <!-- row2 column 1 end  -->

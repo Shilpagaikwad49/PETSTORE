@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- start of the 1 navbar / header -->
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Petstore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.html">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav> <!-- end of the 1 header/navbar -->
+
+        <!-- row 2 started -->
+        <div class="row">
+            <!-- row 2 column 1 started -->
+            <div class="col-3 p-2 bg-body-tertiary">
+           <h5>Filter product by category</h5>
+           <a href="">All</a><br>
+           <a href="">Category 1</a><br>
+           <a href="">Category 2</a><br>
+           <a href="">Category 3</a><br>
+           <hr>
+           <h5>Sort by Price</h5>
+           <a href="">Low to High</a><br>
+           <a href="">High to Low</a>
+           <hr>
+           <h5>Search products by price</h5>
+           <form class="row g-3">
+            <div class="col-auto">
+                <label> Form :</label>
+                <input type="text" class="form-control">
+            </div><br>
+
+            <div class="col-auto">
+                <label> To :</label>
+                <input type="text" class="form-control">
+            </div><br>
+
+            <div class="col-auto mx-auto">
+                <input type="Submit" class="btn btn-primary" value="Search">
+            </div>
+
+           </form>
+
+    
+        </div> <!-- row2 column 1 end  -->
+    
+
+        <!-- row2 column 2 started -->
+        <div class="col-9 p-2">
+
+            <!-- starting 1 more row, with bereakpoints -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ pet.pimage.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div> <!-- end of the card 1  -->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ pet.pimage.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div><!-- <end of the card 2>  -->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ pet.pimage.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 3</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div><!-- <end of rhe card 3> -->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ pet.pimage.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 4</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div><!-- <end of rhe card 4> -->
+
+               </div> <!-- row 2 column 2 ended ,ending inner row with breakpoints   -->
+            </div> <!-- row 2 column 2 end -->
+        </div>  <!-- end of row 2 -->
+
+
+ <!-- start of the row 3 footer -->
+            <div class="row mt-2">
+                <div class="col-4">
+                    <p><i class="bi bi-geo-alt-fill"></i> <br>
+                        2nd floor, Ishan Arcade, 1, Gokhale Rd, opposite Gaondevi
+                        Mandir, above Canara Bank, Shivaji Path, Dada Patil Wadi, Naupada, Thane West, Thane,
+                        Maharashtra 400602</p>
+                </div>
+                <div class="col-4">
+                    <a href="aboutus.html">Know about us</a><br>
+                    <a href="contact.html">Locate us</a>
+                </div>
+                <div class="col-4">
+                    <h5>Feel free to connect with us </h5>
+                    <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;9123567898<br>
+                    <i class="bi bi-whatsapp"></i>&nbsp;&nbsp;8291778433<br>
+                    <i class="bi bi-envelope"></i>&nbsp;&nbsp;shilpagaikwad2000@gmail.com<br>
+                    <i class="bi bi-linkedin"></i><br>
+                    <i class="bi bi-facebook"></i><br>
+                    <i class="bi bi-twitter"></i><br>
+                    <i class="bi bi-cart-check-fill"></i>
+                   
+                </div>
+             </div>
+        </div>
+
+        <!-- <h1>This is the demo of bootstrap</h1> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+        <script src="{% static '/js/bootstrap.min.css' %}"></script>
+
+</body>
+
+</html>
+
+{% for i in messages %}
+<script>
+    alert('{{i}}');
+</script>
+{% endfor %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block 'main' %}
+
+<div class="row">
+    {% if success %}
+       <div class="alert alert-success" role="alert">
+            {{success }}
+       </div>
+    {% endif %}
+
+    {% for msg in messages %} <!-- for showing pett added to cart -->
+    {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+               <div class="alert alert-success" role="alert">
+                  {{ msg }}
+               </div>
+
+            {% endif %} <!-- for showing pett added to cart -->
+    {% endfor %}<!-- for showing pett added to cart -->
+
+    {% for pet in pets %}
+    <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card" style="width: 100%;">
+            <img src="{{pet.pimage.url}}"class="card-img-top" alt="..." style ="width: 100%; height: 150px;">
+            <div class="card-body">
+                <h5 class="card-title">{{pet.name}}</h5>
+                <p class="card-text">{{ pet.breed }} &nbsp;{{ pet.type }}</p>
+                <strong> Price :{{pet.price}}</strong>
+                <a href="/details/{{ pet.id }}" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock 'main' %}
